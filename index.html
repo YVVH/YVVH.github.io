@@ -275,6 +275,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/24/Python%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87%E5%B0%8F%E6%B8%B8%E6%88%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YVVH's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/24/Python%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87%E5%B0%8F%E6%B8%B8%E6%88%8F/" itemprop="url">Python实现贪吃蛇小游戏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-24T21:59:53+08:00">
+                2023-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2
+id="非常简单的代码计划后面能实现自动寻路和联网功能">非常简单的代码，计划后面能实现自动寻路和联网功能。</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygame</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">pygame.init()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置游戏窗口</span></span><br><span class="line">width = <span class="number">800</span></span><br><span class="line">height = <span class="number">600</span></span><br><span class="line">game_display = pygame.display.set_mode((width, height))</span><br><span class="line">pygame.display.set_caption(<span class="string">&#x27;贪吃蛇&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义颜色</span></span><br><span class="line">white = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)</span><br><span class="line">black = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">red = (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">green = (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义贪吃蛇的坐标和大小</span></span><br><span class="line">snake_size = <span class="number">10</span></span><br><span class="line">snake_speed = <span class="number">15</span></span><br><span class="line">font_style = pygame.font.SysFont(<span class="literal">None</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">message</span>(<span class="params">msg, color</span>):</span><br><span class="line">    mesg = font_style.render(msg, <span class="literal">True</span>, color)</span><br><span class="line">    game_display.blit(mesg, [width / <span class="number">6</span>, height / <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">gameLoop</span>():  <span class="comment"># 游戏主函数</span></span><br><span class="line">    game_over = <span class="literal">False</span></span><br><span class="line">    game_close = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    x1 = width / <span class="number">2</span></span><br><span class="line">    y1 = height / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    x1_change = <span class="number">0</span></span><br><span class="line">    y1_change = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    clock = pygame.time.Clock()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 食物位置</span></span><br><span class="line">    foodx = <span class="built_in">round</span>(random.randrange(<span class="number">0</span>, width - snake_size) / <span class="number">10.0</span>) * <span class="number">10.0</span></span><br><span class="line">    foody = <span class="built_in">round</span>(random.randrange(<span class="number">0</span>, height - snake_size) / <span class="number">10.0</span>) * <span class="number">10.0</span></span><br><span class="line"></span><br><span class="line">    last_key = <span class="number">0</span></span><br><span class="line">    snakes = []</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> game_over:</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> game_close == <span class="literal">True</span>:</span><br><span class="line">            game_display.fill(white)</span><br><span class="line">            message(<span class="string">&quot;You Lost! Press Q-Quit or C-Play Again&quot;</span>, red)</span><br><span class="line">            pygame.display.update()</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">                <span class="keyword">if</span> event.<span class="built_in">type</span> == pygame.KEYDOWN:</span><br><span class="line">                    <span class="keyword">if</span> event.key == pygame.K_q:</span><br><span class="line">                        game_over = <span class="literal">True</span></span><br><span class="line">                        game_close = <span class="literal">False</span></span><br><span class="line">                    <span class="keyword">if</span> event.key == pygame.K_c:</span><br><span class="line">                        gameLoop()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">            <span class="keyword">if</span> event.<span class="built_in">type</span> == pygame.QUIT:</span><br><span class="line">                game_over = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">if</span> event.<span class="built_in">type</span> == pygame.KEYDOWN:</span><br><span class="line">                <span class="comment"># print(last_key)</span></span><br><span class="line">                <span class="keyword">if</span> event.key == pygame.K_LEFT <span class="keyword">and</span> (last_key != <span class="number">1</span> <span class="keyword">and</span> last_key != <span class="number">2</span>):</span><br><span class="line">                    last_key = <span class="number">1</span></span><br><span class="line">                    x1_change = -snake_size</span><br><span class="line">                    y1_change = <span class="number">0</span></span><br><span class="line">                <span class="keyword">elif</span> event.key == pygame.K_RIGHT <span class="keyword">and</span> (last_key != <span class="number">2</span> <span class="keyword">and</span> last_key != <span class="number">1</span>):</span><br><span class="line">                    last_key = <span class="number">2</span></span><br><span class="line">                    x1_change = snake_size</span><br><span class="line">                    y1_change = <span class="number">0</span></span><br><span class="line">                <span class="keyword">elif</span> event.key == pygame.K_UP <span class="keyword">and</span> (last_key != <span class="number">3</span> <span class="keyword">and</span> last_key != <span class="number">4</span>):</span><br><span class="line">                    last_key = <span class="number">3</span></span><br><span class="line">                    y1_change = -snake_size</span><br><span class="line">                    x1_change = <span class="number">0</span></span><br><span class="line">                <span class="keyword">elif</span> event.key == pygame.K_DOWN <span class="keyword">and</span> (last_key != <span class="number">4</span> <span class="keyword">and</span> last_key != <span class="number">3</span>):</span><br><span class="line">                    last_key = <span class="number">4</span></span><br><span class="line">                    y1_change = snake_size</span><br><span class="line">                    x1_change = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新蛇的位置</span></span><br><span class="line">        x1 += x1_change</span><br><span class="line">        y1 += y1_change</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> x1 &gt;= width:</span><br><span class="line">            x1 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span> x1 &lt; <span class="number">0</span>:</span><br><span class="line">            x1 = width</span><br><span class="line">        <span class="keyword">elif</span> y1 &gt;= height:</span><br><span class="line">            y1 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span> y1 &lt; <span class="number">0</span>:</span><br><span class="line">            y1 = height</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> snakes:</span><br><span class="line">            <span class="keyword">if</span> x1 == x <span class="keyword">and</span> y1 == y:</span><br><span class="line">                game_close = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> game_close:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        snakes.insert(<span class="number">0</span>, (x1, y1))</span><br><span class="line">        game_display.fill(black)</span><br><span class="line">        pygame.draw.rect(game_display, green, [foodx, foody, snake_size, snake_size])</span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> snakes:</span><br><span class="line">            pygame.draw.rect(game_display, white, [x, y, snake_size, snake_size])</span><br><span class="line">        pygame.display.update()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> x1 == foodx <span class="keyword">and</span> y1 == foody:</span><br><span class="line">            foodx = <span class="built_in">round</span>(random.randrange(<span class="number">0</span>, width - snake_size) / <span class="number">10.0</span>) * <span class="number">10.0</span></span><br><span class="line">            foody = <span class="built_in">round</span>(random.randrange(<span class="number">0</span>, height - snake_size) / <span class="number">10.0</span>) * <span class="number">10.0</span></span><br><span class="line">            <span class="comment"># print(&quot;Yummy!!&quot;)</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            snakes.pop()</span><br><span class="line"></span><br><span class="line">        clock.tick(snake_speed)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gameLoop()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/04/%E5%88%A0%E6%95%B0%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -611,7 +733,7 @@ class="math inline">\(GCD(c,d)=1\)</span>即可。</p>
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -624,7 +746,7 @@ class="math inline">\(GCD(c,d)=1\)</span>即可。</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
